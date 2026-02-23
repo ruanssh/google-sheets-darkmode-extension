@@ -1,0 +1,9 @@
+html.darkmode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+html.darkmode img,
+html.darkmode svg,
+html.darkmode video {
+  filter: invert(1) hue-rotate(180deg);
+}
