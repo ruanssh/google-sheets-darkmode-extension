@@ -2,6 +2,8 @@ const STORAGE_KEY = "darkModeEnabled";
 const toggleBtn = document.getElementById("toggleBtn");
 
 const setButtonLabel = (enabled) => {
+  toggleBtn.classList.toggle("active", enabled);
+  toggleBtn.classList.toggle("inactive", !enabled);
   toggleBtn.textContent = enabled
     ? "Desativar modo escuro"
     : "Ativar modo escuro";

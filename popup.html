@@ -5,33 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sheets Dark Mode</title>
     <style>
+      :root {
+        --bg: #111315;
+        --text: #e8eaed;
+        --muted: #a7adb4;
+        --green: #20c06d;
+        --green-hover: #1aac62;
+        --red: #d64b4b;
+        --red-hover: #bf3f3f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         margin: 0;
-        padding: 12px;
-        width: 220px;
+        width: 260px;
+        min-height: 300px;
+        padding: 18px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-family: "Segoe UI", sans-serif;
-        background: #111315;
-        color: #e8eaed;
+        background: var(--bg);
+        color: var(--text);
       }
 
-      button {
+      .popup {
         width: 100%;
-        border: 1px solid #3c4043;
-        background: #1b1f24;
-        color: #e8eaed;
-        padding: 10px 12px;
-        border-radius: 8px;
-        font-size: 14px;
-        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
       }
 
-      button:hover {
-        background: #222831;
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 999px;
+        object-fit: cover;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .credit {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+        letter-spacing: 0.2px;
+      }
+
+      .toggle-btn {
+        width: 100%;
+        border: 1px solid transparent;
+        color: #ffffff;
+        padding: 11px 12px;
+        border-radius: 12px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.22s ease, transform 0.16s ease,
+          box-shadow 0.22s ease;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.28);
+      }
+
+      .toggle-btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .toggle-btn:active {
+        transform: translateY(0);
+      }
+
+      .toggle-btn.active {
+        background: var(--green);
+      }
+
+      .toggle-btn.active:hover {
+        background: var(--green-hover);
+      }
+
+      .toggle-btn.inactive {
+        background: var(--red);
+      }
+
+      .toggle-btn.inactive:hover {
+        background: var(--red-hover);
       }
     </style>
   </head>
   <body>
-    <button id="toggleBtn" type="button">Carregando...</button>
+    <main class="popup">
+      <img src="icon.png" alt="Avatar" class="avatar" />
+      <p class="credit">Developed by ruanssh</p>
+      <button id="toggleBtn" class="toggle-btn" type="button">Carregando...</button>
+    </main>
     <script src="popup.js"></script>
   </body>
 </html>
